@@ -1,0 +1,304 @@
+@page "/terms"
+@using Microsoft.AspNetCore.Components
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Terms of Service - Elescan</PageTitle>
+
+<script>
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Immediate scroll to top - multiple approaches
+    if (window.scrollTo) window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    
+    // Force scroll to top on page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 100);
+    });
+    
+    // Also ensure it happens when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Force again after a short delay to override any other scripts
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 50);
+    });
+    
+    // Force scroll to top when page becomes visible
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            window.scrollTo(0, 0);
+        }
+    });
+</script>
+
+<style>
+    /* Force immediate scroll behavior for terms page */
+    html {
+        scroll-behavior: auto !important;
+        scroll-top: 0 !important;
+    }
+    
+    body {
+        scroll-behavior: auto !important;
+        scroll-top: 0 !important;
+    }
+    
+    .page-wrapper {
+        position: relative;
+        top: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ensure the page starts at the top */
+    * {
+        scroll-margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+    }
+    
+    /* Force all elements to not auto-focus */
+    * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Allow text selection for content */
+    .terms-service * {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    
+    /* Force page to start at top with CSS positioning */
+    html, body {
+        position: relative;
+        top: 0 !important;
+    }
+    
+    /* Prevent any element from causing scroll */
+    body > * {
+        scroll-margin: 0 !important;
+        scroll-padding: 0 !important;
+    }
+</style>
+
+<div class="page-wrapper">
+    <!-- Top anchor for navigation -->
+    <a id="top" name="top" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px; opacity: 0;"></a>
+    
+    <!-- Home Button - Fixed Position -->
+    <a href="/" class="home-button" title="Back to Home" style="position: fixed; top: 20px; left: 20px; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background-color: white; border-radius: 50%; color: #131B3F; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 1000;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; stroke: #131B3F;">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.5rem 0; border: none; box-shadow: none;">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; border: none;">
+            <a href="/" class="nav-logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/images/logo.png" alt="Elescan Logo" style="height: 80px; width: auto;">
+            </a>
+            
+            <div class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="/" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Home</a>
+                <a href="/who-can-use" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Who can use Elescan?</a>
+                <a href="/support" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Support</a>
+                <a href="/privacy-policy" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Privacy Policy</a>
+                <a href="/terms" style="color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.1);">Terms of Service</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="terms-service">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            
+            <section>
+                <h2>1. Introduction and Definitions</h2>
+                <p>Welcome to Elescan, a mobile application developed and owned by Anescribe, L.L.C. ("Company," "we," "us," or "our"), which provides HIPAA-compliant tools for scanning, storing, and sharing protected health information ("PHI").</p>
+                <p>By creating an account or using Elescan, you agree to be bound by this User License Agreement ("Agreement"), our Privacy Policy (see below), and the Business Associate Agreement contained herein.</p>
+                
+                <h3>Definitions:</h3>
+                <ul>
+                    <li>"User" or "You" refers to any individual accessing or using Elescan.</li>
+                    <li>"Free User" means a user accessing limited viewing functions without a paid subscription.</li>
+                    <li>"Paid User" means a user with an active, paid subscription.</li>
+                    <li>"PHI" has the same meaning as defined under HIPAA.</li>
+                    <li>"MVP" refers to the minimum viable version of Elescan, as described herein.</li>
+                </ul>
+                
+                <p><strong>Territorial Restriction:</strong> Elescan is intended only for use in the United States. By using the service, you represent that you are physically located within the United States and subject to its laws.</p>
+            </section>
+            
+            <section>
+                <h2>2. Grant of License</h2>
+                <p>Subject to the terms of this Agreement, we grant you a limited, non-exclusive, revocable, non-transferable license to install and use the Elescan app for lawful and personal use within the United States.</p>
+                <p>You may not:</p>
+                <ul>
+                    <li>Reverse engineer, decompile, or modify the app;</li>
+                    <li>Use the app to violate HIPAA, federal, state, or local laws;</li>
+                    <li>Share credentials or access with unauthorized users.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>3. User Responsibilities</h2>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Maintain accurate contact information;</li>
+                    <li>Not share PHI with unauthorized recipients;</li>
+                    <li>Only use SMS/email/in-app sharing for individuals you are authorized to contact;</li>
+                    <li>Respect opt-out and STOP requests from recipients;</li>
+                    <li>Keep your device secured and updated.</li>
+                </ul>
+                <p>Face ID is permitted to bypass logins; MFA is otherwise required. You are responsible for maintaining the confidentiality of your login credentials.</p>
+            </section>
+            
+            <section>
+                <h2>4. User Conduct & Legal Compliance</h2>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Never use Elescan or elescan.com to create, store, transmit, or facilitate the distribution of Child Sexual Abuse Material (CSAM);</li>
+                    <li>Never use Elescan to harass, sexually abuse, stalk, or otherwise illegally harm any other individual;</li>
+                    <li>Use Elescan only in compliance with all applicable local, state, and federal laws of the United States.</li>
+                </ul>
+                <p>Violation of this section will result in immediate termination of your account and potential reporting to law enforcement authorities.</p>
+            </section>
+            
+            <section>
+                <h2>5. Paid and Free Tiers</h2>
+                <h3>Free Tier:</h3>
+                <ul>
+                    <li>May view shared Elescans only.</li>
+                    <li>Cannot scan, send, or upload documents.</li>
+                    <li>Includes a 1-month free trial starting from the first scan.</li>
+                </ul>
+                
+                <h3>Paid Tier:</h3>
+                <ul>
+                    <li>May scan, store, share, and manage records.</li>
+                    <li>Subscription: $11/month or $111/year.</li>
+                </ul>
+                <p>You may cancel your subscription at any time. Upon cancellation, access will continue until the end of the billing cycle.</p>
+            </section>
+            
+            <section>
+                <h2>6. Data Storage and Security</h2>
+                <ul>
+                    <li>Scans are stored securely in HIPAA-compliant cloud infrastructure and sandboxed locally.</li>
+                    <li>Files stored on-device are excluded from iCloud backups and retained locally until synced.</li>
+                    <li>All PHI is encrypted in transit (TLS 1.2 or higher) and at rest (AES-256).</li>
+                    <li>You may export your data as a ZIP file or request permanent account deletion at any time.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>7. PHI Sharing & Business Associate Agreement (BAA)</h2>
+                <p>By using Elescan, you may input, upload, or share PHI. You represent and warrant that you are authorized to access and transmit PHI under HIPAA.</p>
+                
+                <h3>Business Associate Agreement</h3>
+                <p>Anescribe, L.L.C. agrees to:</p>
+                <ul>
+                    <li>Maintain HIPAA-compliant storage and transmission infrastructure;</li>
+                    <li>Protect PHI from unauthorized access or disclosure;</li>
+                    <li>Limit access to PHI to authorized personnel;</li>
+                    <li>Retain PHI for a minimum of 7 years, or until age 21 for pediatric patients;</li>
+                    <li>Report breaches as required by law.</li>
+                </ul>
+                <p>This section constitutes a binding Business Associate Agreement under 45 CFR §164.504(e), effective upon your use of the Elescan app.</p>
+            </section>
+            
+            <section>
+                <h2>8. Termination</h2>
+                <p>You may delete your account at any time. Deletion is immediate.</p>
+                <p>However, we are legally required to retain any PHI you create or upload for 7–10 years, including until age 21 for pediatric patients, even if your account is free or canceled.</p>
+            </section>
+            
+            <section>
+                <h2>9. Limitation of Liability</h2>
+                <p>Elescan is provided "as is" without warranties of any kind. To the fullest extent permitted by law, Anescribe, L.L.C. disclaims all liability for any direct, indirect, incidental, or consequential damages, including loss or corruption of PHI, arising out of your use of Elescan.</p>
+            </section>
+            
+            <section>
+                <h2>10. Dispute Resolution and Jurisdiction</h2>
+                <p>This Agreement is governed by the laws of the State of New York.</p>
+                <p>Disputes may be resolved:</p>
+                <ul>
+                    <li>In state or federal courts located in New York, NY; or</li>
+                    <li>By binding arbitration, if both parties agree.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>11. Modifications</h2>
+                <p>We may update this Agreement by posting a revised version in the app or at www.elescan.com. Continued use after such notice constitutes acceptance.</p>
+            </section>
+            
+            <section>
+                <h2>12. Contact</h2>
+                <p>Anescribe, L.L.C.<br>
+                304 S. Jones Blvd #1269<br>
+                Las Vegas, NV 89107<br>
+                Email: <a href="mailto:support@elescan.com">support@elescan.com</a> for Elescan</p>
+            </section>
+            
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Practice?</h2>
+            <p>Join thousands of healthcare professionals who trust Elescan for their document management needs.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+                    <img src="/images/download.svg" alt="Download on App Store" class="download-image">
+                </a>
+            </div>
+            <p class="cta-note">No sales calls, no lengthy demos. Just download, accept our BAA, and start scanning!</p>
+        </div>
+    </section>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                // Multiple approaches to force scroll to top
+                await JSRuntime.InvokeVoidAsync("scrollTo", 0, 0);
+                await JSRuntime.InvokeVoidAsync("eval", "document.documentElement.scrollTop = 0; document.body.scrollTop = 0;");
+                await JSRuntime.InvokeVoidAsync("eval", "window.location.hash = '#top';");
+                await JSRuntime.InvokeVoidAsync("eval", "setTimeout(() => { window.scrollTo(0, 0); }, 100);");
+            }
+            catch (Exception ex)
+            {
+                // Ignore any JavaScript errors
+                Console.WriteLine($"Scroll error: {ex.Message}");
+            }
+        }
+    }
+} 

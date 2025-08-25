@@ -1,0 +1,441 @@
+@page "/support"
+@using Microsoft.AspNetCore.Components
+@using System.Net.Mail
+@using System.Net
+@using System.ComponentModel.DataAnnotations
+@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+
+<PageTitle>Support - Elescan</PageTitle>
+
+<script>
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Immediate scroll to top - multiple approaches
+    if (window.scrollTo) window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    
+    // Force scroll to top on page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 100);
+    });
+    
+    // Also ensure it happens when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Force again after a short delay to override any other scripts
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 50);
+    });
+    
+    // Force scroll to top when page becomes visible
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            window.scrollTo(0, 0);
+        }
+    });
+</script>
+
+<style>
+    /* Force immediate scroll behavior for support page */
+    html {
+        scroll-behavior: auto !important;
+        scroll-top: 0 !important;
+    }
+    
+    body {
+        scroll-behavior: auto !important;
+        scroll-top: 0 !important;
+    }
+    
+    .page-wrapper {
+        position: relative;
+        top: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ensure the page starts at the top */
+    * {
+        scroll-margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+    }
+    
+    /* Force all elements to not auto-focus */
+    * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Allow text selection for content */
+    .support-content * {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    
+    /* Force page to start at top with CSS positioning */
+    html, body {
+        position: relative;
+        top: 0 !important;
+    }
+    
+    /* Prevent any element from causing scroll */
+    body > * {
+        scroll-margin: 0 !important;
+        scroll-padding: 0 !important;
+    }
+    
+    /* Support form styles */
+    .support-form {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e1e5e9;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.2s ease;
+    }
+    
+    .form-input:focus {
+        outline: none;
+        border-color: #007AFF;
+    }
+    
+    .form-textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e1e5e9;
+        border-radius: 8px;
+        font-size: 1rem;
+        min-height: 250px;
+        resize: vertical;
+        transition: border-color 0.2s ease;
+        font-family: inherit;
+    }
+    
+    .form-textarea:focus {
+        outline: none;
+        border-color: #007AFF;
+    }
+    
+    .submit-btn {
+        background: linear-gradient(135deg, #007AFF 0%, #1E90FF 100%);
+        color: white;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+        width: 100%;
+    }
+    
+    .submit-btn:hover {
+        opacity: 0.9;
+    }
+    
+    .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    
+    .success-message {
+        background: #d4edda;
+        color: #155724;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border: 1px solid #c3e6cb;
+    }
+    
+    .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border: 1px solid #f5c6cb;
+    }
+</style>
+
+<div class="page-wrapper">
+    <!-- Top anchor for navigation -->
+    <a id="top" name="top" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px; opacity: 0;"></a>
+    
+    <!-- Home Button - Fixed Position -->
+    <a href="/" class="home-button" title="Back to Home" style="position: fixed; top: 20px; left: 20px; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background-color: white; border-radius: 50%; color: #131B3F; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 1000;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; stroke: #131B3F;">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.5rem 0; border: none; box-shadow: none;">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; border: none;">
+            <a href="/" class="nav-logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/images/logo.png" alt="Elescan Logo" style="height: 80px; width: auto;">
+            </a>
+            
+            <div class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="/" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Home</a>
+                <a href="/who-can-use" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Who can use Elescan?</a>
+                <a href="/support" style="color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.1);">Support</a>
+                <a href="/privacy-policy" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Privacy Policy</a>
+                <a href="/terms" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Terms of Service</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="support-content">
+        <div class="container">
+            <h1>Support</h1>
+            <p>Need help? We're here to assist you. Fill out the form below and we'll get back to you as soon as possible.</p>
+            
+            <div class="support-form">
+                @if (showSuccessMessage)
+                {
+                    <div class="success-message">
+                        <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
+                    </div>
+                }
+                
+                @if (showErrorMessage)
+                {
+                    <div class="error-message">
+                        <strong>Error:</strong> @errorMessage
+                    </div>
+                }
+                
+                <EditForm Model="@supportForm" OnValidSubmit="@HandleSubmit" FormName="SupportForm">
+                    <DataAnnotationsValidator />
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <InputText id="email" @bind-Value="supportForm.Email" class="form-input" placeholder="Enter your email address" />
+                        <ValidationMessage For="@(() => supportForm.Email)" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <InputTextArea id="message" @bind-Value="supportForm.Message" class="form-textarea" placeholder="Describe your issue or question..." />
+                        <ValidationMessage For="@(() => supportForm.Message)" />
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" disabled="@isSubmitting">
+                        @if (isSubmitting)
+                        {
+                            <span>Sending...</span>
+                        }
+                        else
+                        {
+                            <span>Send Message</span>
+                        }
+                    </button>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Practice?</h2>
+            <p>Join thousands of healthcare professionals who trust Elescan for their document management needs.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+                    <img src="/images/download.svg" alt="Download on App Store" class="download-image">
+                </a>
+            </div>
+            <p class="cta-note">No sales calls, no lengthy demos. Just download, accept our BAA, and start scanning!</p>
+        </div>
+    </section>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private SupportForm supportForm { get; set; } = new();
+    
+    private bool isSubmitting = false;
+    private bool showSuccessMessage = false;
+    private bool showErrorMessage = false;
+    private string errorMessage = "";
+
+    public class SupportForm
+    {
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Message is required")]
+        [MinLength(10, ErrorMessage = "Message must be at least 10 characters long")]
+        public string Message { get; set; } = string.Empty;
+    }
+
+    protected override void OnInitialized()
+    {
+        supportForm ??= new SupportForm();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                // Multiple approaches to force scroll to top
+                await JSRuntime.InvokeVoidAsync("scrollTo", 0, 0);
+                await JSRuntime.InvokeVoidAsync("eval", "document.documentElement.scrollTop = 0; document.body.scrollTop = 0;");
+                await JSRuntime.InvokeVoidAsync("eval", "window.location.hash = '#top';");
+                await JSRuntime.InvokeVoidAsync("eval", "setTimeout(() => { window.scrollTo(0, 0); }, 100);");
+            }
+            catch (Exception ex)
+            {
+                // Ignore any JavaScript errors
+                Console.WriteLine($"Scroll error: {ex.Message}");
+            }
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        Console.WriteLine($"Form submitted - Email: {supportForm.Email}, Message length: {supportForm.Message?.Length ?? 0}");
+        
+        isSubmitting = true;
+        showSuccessMessage = false;
+        showErrorMessage = false;
+        StateHasChanged();
+
+        try
+        {
+            // Validate form data exists
+            if (string.IsNullOrWhiteSpace(supportForm.Email) || string.IsNullOrWhiteSpace(supportForm.Message))
+            {
+                throw new Exception("Form data is missing");
+            }
+
+            // Create email content
+            var emailSubject = "Support Request from Elescan Website";
+            var emailBody = $"<h3>New Support Request</h3>" +
+                           $"<p><strong>From:</strong> {supportForm.Email}</p>" +
+                           $"<p><strong>Message:</strong></p>" +
+                           $"<p>{supportForm.Message.Replace("\n", "<br>")}</p>" +
+                           $"<p><strong>Submitted:</strong> {DateTime.Now:yyyy-MM-dd HH:mm:ss}</p>";
+
+            // Send email
+            await SendEmailAsync(supportForm.Email, emailSubject, emailBody);
+
+            // Show success message and reset form
+            showSuccessMessage = true;
+            supportForm = new SupportForm();
+        }
+        catch (Exception ex)
+        {
+            showErrorMessage = true;
+            errorMessage = $"There was an error sending your message: {ex.Message}. Please try again or contact us directly at support@elescan.com";
+            Console.WriteLine($"Email error: {ex.Message}");
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task SendEmailAsync(string fromEmail, string subject, string body)
+    {
+        try
+        {
+            // Get email settings from configuration
+            var smtpServer = Configuration["EmailSettings:SmtpServer"];
+            var smtpPort = int.Parse(Configuration["EmailSettings:SmtpPort"] ?? "587");
+            var senderEmail = Configuration["EmailSettings:SenderEmail"];
+            var senderPassword = Configuration["EmailSettings:SenderPassword"];
+            var senderName = Configuration["EmailSettings:SenderName"];
+            var recipientEmail = Configuration["EmailSettings:RecipientEmail"];
+
+            Console.WriteLine($"Email Config - Server: {smtpServer}, Port: {smtpPort}, Sender: {senderEmail}, Recipient: {recipientEmail}");
+            Console.WriteLine($"Password length: {senderPassword?.Length ?? 0}");
+
+            // Validate configuration
+            if (string.IsNullOrEmpty(smtpServer) || string.IsNullOrEmpty(senderEmail) || 
+                string.IsNullOrEmpty(senderPassword) || string.IsNullOrEmpty(recipientEmail))
+            {
+                throw new Exception("Email configuration is incomplete. Please check appsettings.json");
+            }
+
+            Console.WriteLine("Creating SMTP client...");
+            using var client = new SmtpClient(smtpServer, smtpPort);
+            client.Credentials = new NetworkCredential(senderEmail, senderPassword);
+            client.EnableSsl = true;
+            client.Timeout = 30000; // 30 seconds timeout
+
+            Console.WriteLine("Creating email message...");
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(senderEmail, senderName),
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            };
+
+            // Set reply-to as the user's email
+            mailMessage.ReplyToList.Add(new MailAddress(fromEmail));
+            mailMessage.To.Add(recipientEmail);
+
+            Console.WriteLine($"Sending email from {senderEmail} to {recipientEmail}...");
+            await client.SendMailAsync(mailMessage);
+            Console.WriteLine("Email sent successfully!");
+        }
+        catch (Exception ex)
+        {
+            // Log detailed error information
+            Console.WriteLine($"Email sending failed: {ex.Message}");
+            Console.WriteLine($"Stack trace: {ex.StackTrace}");
+            if (ex.InnerException != null)
+            {
+                Console.WriteLine($"Inner exception: {ex.InnerException.Message}");
+            }
+            throw;
+        }
+    }
+} 

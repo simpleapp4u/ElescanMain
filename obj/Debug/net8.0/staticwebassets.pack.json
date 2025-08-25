@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Debug/net8.0/scopedcss/projectbundle/ElescanMain.bundle.scp.css",
+      "PackagePath": "staticwebassets/ElescanMain.bundle.scp.css"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/cloud-icon.png",
+      "PackagePath": "staticwebassets/images/cloud-icon.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/demo.png",
+      "PackagePath": "staticwebassets/images/demo.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/desktop-icon.png",
+      "PackagePath": "staticwebassets/images/desktop-icon.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/download.svg",
+      "PackagePath": "staticwebassets/images/download.svg"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/hero-devices.png",
+      "PackagePath": "staticwebassets/images/hero-devices.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/login-icon.png",
+      "PackagePath": "staticwebassets/images/login-icon.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/logo_back.png",
+      "PackagePath": "staticwebassets/images/logo_back.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/physician-using-app.png",
+      "PackagePath": "staticwebassets/images/physician-using-app.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/scan-icon.png",
+      "PackagePath": "staticwebassets/images/scan-icon.png"
+    },
+    {
+      "Id": "/Volumes/T9/Code/web/ElescanMain/ElescanMain/wwwroot/images/share-icon.png",
+      "PackagePath": "staticwebassets/images/share-icon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.ElescanMain.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.ElescanMain.props",
+      "PackagePath": "build\\ElescanMain.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ElescanMain.props",
+      "PackagePath": "buildMultiTargeting\\ElescanMain.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ElescanMain.props",
+      "PackagePath": "buildTransitive\\ElescanMain.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,307 @@
+﻿@page "/"
+
+<PageTitle>Elescan - HIPAA-Compliant Scanner & Cloud Storage for Healthcare</PageTitle>
+
+<!-- Navigation -->
+<nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.3rem 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border: none; box-shadow: none; outline: none;">
+    <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; border: none; box-shadow: none; outline: none;">
+        <a href="/" class="nav-logo" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="/images/logo.png" alt="Elescan Logo" style="height: 100px; width: auto; min-height: 100px; max-height: none;">
+        </a>
+        
+        <div class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
+            <a href="/" style="color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.1);">Home</a>
+            <a href="/who-can-use" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Who can use Elescan?</a>
+            <a href="#features" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Features</a>
+            <a href="#pricing" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Pricing</a>
+            <a href="/support" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Support</a>
+            <a href="/privacy-policy" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Privacy Policy</a>
+            <a href="/terms" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Terms of Service</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" style="margin-top: 110px;">
+    <div class="hero-content">
+        <!-- Login Button - With small spacing from navigation -->
+        <div class="hero-login" style="margin-top: 2rem; margin-bottom: 2rem; text-align: center;">
+            <button class="hero-login-btn" onclick="window.open('https://app.elescan.com', '_blank')">
+                Log In to view or share your Elescans.
+            </button>
+        </div>
+        <div class="hero-header">
+            <div class="hero-logo">
+                <img src="/images/logo.png" alt="Elescan Logo" class="logo">
+            </div>
+            <div class="hero-download">
+                <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-xl" target="_blank">
+                    <img src="/images/download.svg" alt="Download on App Store" class="download-image-xl">
+                </a>
+            </div>
+        </div>
+        <div class="hero-main">
+            <div class="hero-text">
+                <h1>Transform Your iPhone & iPad into a HIPAA-Compliant Scanner</h1>
+                <p class="hero-subtitle">Elescan is the all-in-one HIPAA-compliant scanner, cloud storage, and secure sharing solution designed by healthcare professionals, for healthcare professionals.</p>
+                <div class="hero-badges">
+                    <span class="badge">✓ HIPAA Compliant</span>
+                    <span class="badge">✓ No Sales Calls</span>
+                    <span class="badge">✓ Start Free</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- AI Image Description: Modern iPhone and iPad displaying a clean, professional medical document scanning interface with blue and white medical-themed UI. The devices should be positioned at an angle showing the scanning screen with a patient form or medical document being scanned. Background should be clean and professional with subtle medical/healthcare visual elements. -->
+                <img src="/images/hero-devices.png" alt="Elescan app on iPhone and iPad" class="hero-device-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Section -->
+<section class="demo">
+    <div class="container">
+        <div class="demo-content">
+            <div class="demo-text">
+                <h2>Try the Elescan demo right in your browser – no download needed!</h2>
+                <p>Experience the mobile interface and intuitive design while exploring the most secure, HIPAA-compliant platform to store and share your documents with confidence.</p>
+                <div class="demo-buttons">
+                    <a href="https://app.elescan.com/demo" class="btn btn-primary btn-large" target="_blank">Experience Elescan Now</a>
+                    <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+                        <img src="/images/download.svg" alt="Download on App Store" class="download-image">
+                    </a>
+                </div>
+            </div>
+            <div class="demo-image">
+                <!-- AI Image Description: Screenshot of Elescan web demo interface showing the clean, professional dashboard with document scanning preview, HIPAA-compliant security indicators, and mobile-responsive design elements in the signature navy blue and cyan color scheme -->
+                <img src="/images/demo.png" alt="Elescan Demo Interface" class="demo-screenshot">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2>Everything You Need in One App</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- AI Image Description: Clean, modern icon representing document scanning - a smartphone with scanning lines over a document, in medical blue color scheme -->
+                    <img src="/images/scan-icon.png" alt="Scan documents">
+                </div>
+                <h3>HIPAA-Compliant Scanning</h3>
+                <p>Turn any iPhone or iPad into a professional medical scanner with enterprise-grade security and HIPAA compliance built-in.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- AI Image Description: Cloud storage icon with medical cross symbol, representing secure cloud storage for healthcare documents -->
+                    <img src="/images/cloud-icon.png" alt="Cloud storage">
+                </div>
+                <h3>Secure Cloud Storage</h3>
+                <p>Store unlimited scans in our HIPAA-compliant cloud. Your documents are always accessible, always secure, always yours.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- AI Image Description: Sharing icon showing multiple devices connected with security shield, representing secure document sharing -->
+                    <img src="/images/share-icon.png" alt="Secure sharing">
+                </div>
+                <h3>Secure Sharing</h3>
+                <p>Share documents with colleagues, patients, or billing teams without email attachments. Control access and maintain privacy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- AI Image Description: Desktop computer monitor showing a clean web interface for document management, professional medical UI design -->
+                    <img src="/images/desktop-icon.png" alt="Desktop access">
+                </div>
+                <h3>Web Console</h3>
+                <p>Access and manage all your documents from any desktop browser.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- AI Image Description: Modern split-screen login interface showing traditional email/password form on the left and a prominent QR code scanner on the right, with a secure lock icon and flowing connection lines between mobile and desktop, all in medical blue color scheme -->
+                    <img src="/images/login-icon.png" alt="Flexible login options">
+                </div>
+                <h3>Flexible Login</h3>
+                <p>Choose your preferred way to access the web console: traditional email/password or simply scan a QR code with your phone for instant secure access.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits">
+    <div class="container">
+        <h2>Why Healthcare Professionals Choose Elescan</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon">📋</div>
+                <h3>Still Chart on Paper?</h3>
+                <p>Keep your paper workflow and use Elescan to digitize, save, and share with colleagues or patients seamlessly.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">📧</div>
+                <h3>Email Size Limits?</h3>
+                <p>Skip email attachments entirely. Use Elescan to share secure access links instead of large file attachments.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">📠</div>
+                <h3>Billing Needs Fax?</h3>
+                <p>Scan demographics and send secure access for viewing and downloading - no more fax machines or extra steps.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🔒</div>
+                <h3>Privacy Concerns?</h3>
+                <p>Photograph patient data with confidence. Our HIPAA-compliant platform ensures privacy and security.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing">
+    <div class="container">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0<span>/forever</span></div>
+                <ul>
+                    <li>✓ Free scans to get started</li>
+                    <li>✓ Secure sending</li>
+                    <li>✓ HIPAA compliance</li>
+                    <li>✓ No Ads</li>
+                    <li class="unavailable">✗ Unlimited Data to store</li>
+                    <li class="unavailable">✗ Unlimited Data to share</li>
+                    <li class="unavailable">✗ Premium Support</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Pro Monthly</h3>
+                <div class="price">$11.00<span>/month</span></div>
+                <ul>
+                    <li>✓ Unlimited scans</li>
+                    <li>✓ Unlimited Data to store</li>
+                    <li>✓ Unlimited Data to share</li>
+                    <li>✓ No Ads</li>
+                    <li>✓ Premium Support</li>
+                    <li>✓ Web console access</li>
+                </ul>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Pro Yearly</h3>
+                <div class="price">$109.99<span>/year</span></div>
+                <div class="savings">Save $22 per year!</div>
+                <ul>
+                    <li>✓ Unlimited scans</li>
+                    <li>✓ Unlimited Data to store</li>
+                    <li>✓ Unlimited Data to share</li>
+                    <li>✓ No Ads</li>
+                    <li>✓ Premium Support</li>
+                    <li>✓ Web console access</li>
+                </ul>
+            </div>
+        </div>
+        <p class="pricing-note">
+            <strong>Important:</strong> If you stop paying, you never lose access to scans you created and stored with us. All purchases are made through the mobile app.
+        </p>
+    </div>
+</section>
+
+<!-- Trust Section -->
+<section class="trust">
+    <div class="container">
+        <div class="trust-content">
+            <div class="trust-text">
+                <h2>Built by Healthcare Professionals</h2>
+                <p>Elescan is developed by <strong>Anescribe, LLC</strong> - owned and operated by a practicing physician who understands the real challenges of healthcare documentation.</p>
+                <div class="trust-features">
+                    <div class="trust-feature">
+                        <span class="trust-icon">🏥</span>
+                        <strong>Physician-Owned</strong>
+                    </div>
+                    <div class="trust-feature">
+                        <span class="trust-icon">📋</span>
+                        <strong>BAA Included</strong>
+                    </div>
+                    <div class="trust-feature">
+                        <span class="trust-icon">🚀</span>
+                        <strong>No Demo Required</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-image">
+                <!-- AI Image Description: Professional medical office setting with a physician using a tablet/iPad, showing the Elescan app interface. Clean, modern medical office background with medical equipment visible. The physician should appear professional and confident, representing the physician-owned aspect of the company. -->
+                <img src="/images/physician-using-app.png" alt="Physician using Elescan">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Transform Your Practice?</h2>
+        <p>Join thousands of healthcare professionals who trust Elescan for their document management needs.</p>
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+                <img src="/images/download.svg" alt="Download on App Store" class="download-image">
+            </a>
+        </div>
+        <p class="cta-note">No sales calls, no lengthy demos. Just download, accept our BAA, and start scanning!</p>
+    </div>
+</section>
+
+<!-- YouTube Video Section -->
+<section class="youtube-section">
+    <div class="container">
+        <h2>See Elescan in Action</h2>
+        <div class="youtube-container">
+            <iframe 
+                src="https://www.youtube.com/embed/xyx5OCeMEWU" 
+                title="Elescan Demo Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Elescan</h3>
+                <p>HIPAA-compliant scanner and cloud storage for healthcare professionals.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="/who-can-use">Who can use Elescan?</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="/support">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Anescribe, LLC. All rights reserved.</p>
+            <p class="developer-credit">Elescan was developed for Anescribe, LLC by Denys Kolosovskyy.</p>
+        </div>
+    </div>
+</footer>

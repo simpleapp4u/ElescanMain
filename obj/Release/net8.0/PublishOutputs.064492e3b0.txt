@@ -1,0 +1,7 @@
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/ElescanMain
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/appsettings.Development.json
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/appsettings.json
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/ElescanMain.dll
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/ElescanMain.deps.json
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/ElescanMain.runtimeconfig.json
+/var/folders/61/c9js62z95jg7qt5xjvg7t1pr0000gn/T/rider-publish3668049119383404009/ElescanMain.pdb

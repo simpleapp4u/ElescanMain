@@ -1,0 +1,260 @@
+@page "/privacy-policy"
+@using Microsoft.AspNetCore.Components
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Privacy Policy - Elescan</PageTitle>
+
+<script>
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Immediate scroll to top - multiple approaches
+    if (window.scrollTo) window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    
+    // Force scroll to top on page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 100);
+    });
+    
+    // Also ensure it happens when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Force again after a short delay to override any other scripts
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 50);
+    });
+    
+    // Force scroll to top when page becomes visible
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            window.scrollTo(0, 0);
+        }
+    });
+</script>
+
+<style>
+    /* Force immediate scroll behavior for privacy policy page */
+    html {
+        scroll-behavior: auto !important;
+        scroll-top: 0 !important;
+    }
+    
+    body {
+        scroll-behavior: auto !important;
+        scroll-top: 0 !important;
+    }
+    
+    .page-wrapper {
+        position: relative;
+        top: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ensure the page starts at the top */
+    * {
+        scroll-margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+    }
+    
+    /* Force all elements to not auto-focus */
+    * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Allow text selection for content */
+    .privacy-policy * {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    
+    /* Force page to start at top with CSS positioning */
+    html, body {
+        position: relative;
+        top: 0 !important;
+    }
+    
+    /* Prevent any element from causing scroll */
+    body > * {
+        scroll-margin: 0 !important;
+        scroll-padding: 0 !important;
+    }
+</style>
+
+<div class="page-wrapper">
+    <!-- Top anchor for navigation -->
+    <a id="top" name="top" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px; opacity: 0;"></a>
+    
+    <!-- Home Button - Fixed Position -->
+    <a href="/" class="home-button" title="Back to Home" style="position: fixed; top: 20px; left: 20px; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background-color: white; border-radius: 50%; color: #131B3F; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 1000;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; stroke: #131B3F;">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.5rem 0; border: none; box-shadow: none;">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; border: none;">
+            <a href="/" class="nav-logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/images/logo.png" alt="Elescan Logo" style="height: 80px; width: auto;">
+            </a>
+            
+            <div class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="/" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Home</a>
+                <a href="/who-can-use" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Who can use Elescan?</a>
+                <a href="/support" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Support</a>
+                <a href="/privacy-policy" style="color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.1);">Privacy Policy</a>
+                <a href="/terms" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Terms of Service</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="privacy-policy">
+        <div class="container">
+            <h1>Privacy Policy for Elescan</h1>
+            
+            <p class="effective-date">Effective: May 4, 2025</p>
+            
+            <p class="intro">At Elescan, your privacy is our priority. This Privacy Policy describes how we collect, use, and protect your personal information, including your mobile phone number, when you use our services for authentication or secure document delivery.</p>
+            
+            <section>
+                <h2>1. Information We Collect</h2>
+                <p>We collect and store mobile phone numbers for two purposes:</p>
+                <ul>
+                    <li>To deliver One-Time Passcodes (OTPs) for two-factor authentication (2FA).</li>
+                    <li>To send secure, one-time links for downloading Protected Health Information (PHI), when initiated by an Elescan user.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>2. How We Use Your Information</h2>
+                <h3>For Authentication:</h3>
+                <ul>
+                    <li>Your phone number is used solely to deliver OTPs for login verification.</li>
+                    <li>After 2FA is enabled, you may switch to an authenticator app instead of receiving SMS messages.</li>
+                </ul>
+                
+                <h3>For Secure PHI Delivery via SMS:</h3>
+                <ul>
+                    <li>Elescan users may enter or import mobile numbers of individuals they are authorized to contact.</li>
+                    <li>These numbers are stored only in the user's private contact list for future HIPAA-compliant document sharing and audit logging.</li>
+                    <li>When used, the system sends one-time secure download links via SMS.</li>
+                    <li>Recipients may reply STOP to permanently opt out of future messages.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>3. Opt-Out Options</h2>
+                <h3>For 2FA Messages:</h3>
+                <ul>
+                    <li>You may opt out of SMS-based 2FA by replying STOP and switching to an authenticator app.</li>
+                </ul>
+                
+                <h3>For PHI Delivery Messages:</h3>
+                <ul>
+                    <li>Any individual receiving an SMS from Elescan may reply STOP to prevent all future SMS from any Elescan user.</li>
+                    <li>They may reply HELP to receive contact support information.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>4. No Third-Party Sharing</h2>
+                <p>Elescan does not sell or share phone numbers with third parties for marketing.</p>
+                <p>Access to phone numbers is limited to:</p>
+                <ul>
+                    <li>The authenticated Elescan user who entered the number.</li>
+                    <li>Support staff under strict confidentiality and HIPAA-compliance obligations.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>5. Data Security</h2>
+                <ul>
+                    <li>All mobile numbers are stored using industry-standard encryption.</li>
+                    <li>SMS delivery is performed via HIPAA-compliant infrastructure.</li>
+                    <li>Access to recipient numbers is limited to the user who entered the contact unless required by law.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>6. Changes to This Privacy Policy</h2>
+                <p>We may update this policy from time to time. Updates will be posted on this page with a revised effective date.</p>
+            </section>
+            
+            <section>
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy, contact us at:</p>
+                <p><a href="mailto:support@elescan.com">support@elescan.com</a></p>
+            </section>
+            
+            <section class="disclaimer">
+                <h2>Opt-In Disclaimer</h2>
+                <p>By providing your mobile phone number, you:</p>
+                <ul>
+                    <li>Consent to receive SMS messages for authentication or secure document delivery.</li>
+                    <li>Confirm you are the owner of the number or have permission from the owner.</li>
+                    <li>Understand that messages may contain links to Protected Health Information (PHI).</li>
+                    <li>May reply STOP at any time to opt out.</li>
+                </ul>
+            </section>
+            
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Practice?</h2>
+            <p>Join thousands of healthcare professionals who trust Elescan for their document management needs.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+                    <img src="/images/download.svg" alt="Download on App Store" class="download-image">
+                </a>
+            </div>
+            <p class="cta-note">No sales calls, no lengthy demos. Just download, accept our BAA, and start scanning!</p>
+        </div>
+    </section>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                // Multiple approaches to force scroll to top
+                await JSRuntime.InvokeVoidAsync("scrollTo", 0, 0);
+                await JSRuntime.InvokeVoidAsync("eval", "document.documentElement.scrollTop = 0; document.body.scrollTop = 0;");
+                await JSRuntime.InvokeVoidAsync("eval", "window.location.hash = '#top';");
+                await JSRuntime.InvokeVoidAsync("eval", "setTimeout(() => { window.scrollTo(0, 0); }, 100);");
+            }
+            catch (Exception ex)
+            {
+                // Ignore any JavaScript errors
+                Console.WriteLine($"Scroll error: {ex.Message}");
+            }
+        }
+    }
+} 

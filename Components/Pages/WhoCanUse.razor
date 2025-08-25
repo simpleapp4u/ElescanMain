@@ -1,0 +1,278 @@
+@page "/who-can-use"
+
+<PageTitle>Who can use Elescan? - Elescan</PageTitle>
+
+<script>
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Immediate scroll to top - multiple approaches
+    if (window.scrollTo) window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    
+    // Force scroll to top on page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 100);
+    });
+</script>
+
+<style>
+    /* Page-specific styles */
+    .who-can-use-page {
+        background: #f8fafc;
+        min-height: 100vh;
+    }
+    
+    .who-can-use-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+        margin-top: 120px;
+    }
+    
+    .who-can-use-intro {
+        background: white;
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .who-can-use-intro h1 {
+        color: #1e293b;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+    
+    .who-can-use-intro p {
+        color: #64748b;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    .user-category {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+    }
+    
+    .user-category h2 {
+        color: #1e293b;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .user-category p {
+        color: #64748b;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+    
+    /* Responsive styles */
+    @@media (max-width: 768px) {
+        .who-can-use-content {
+            padding: 1rem;
+            margin-top: 100px;
+        }
+        
+        .who-can-use-intro {
+            padding: 2rem;
+        }
+        
+        .who-can-use-intro h1 {
+            font-size: 2rem;
+        }
+        
+        .user-category {
+            padding: 2rem;
+        }
+        
+        .user-category h2 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @@media (max-width: 480px) {
+        .who-can-use-content {
+            margin-top: 90px;
+        }
+        
+        .who-can-use-intro {
+            padding: 1.5rem;
+        }
+        
+        .who-can-use-intro h1 {
+            font-size: 1.75rem;
+        }
+        
+        .user-category {
+            padding: 1.5rem;
+        }
+        
+        .user-category h2 {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+
+<div class="who-can-use-page">
+    <!-- Navigation -->
+    <nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.5rem 0; border: none; box-shadow: none;">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; border: none;">
+            <a href="/" class="nav-logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/images/logo.png" alt="Elescan Logo" style="height: 80px; width: auto;">
+            </a>
+            
+            <div class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="/" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Home</a>
+                <a href="/who-can-use" style="color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.1);">Who can use Elescan?</a>
+                <a href="/support" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Support</a>
+                <a href="/privacy-policy" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Privacy Policy</a>
+                <a href="/terms" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.3s ease;">Terms of Service</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="who-can-use-content">
+        <!-- Introduction -->
+        <div class="who-can-use-intro">
+            <h1>Who can use Elescan?</h1>
+            <p>Elescan is for healthcare professionals. As such, all users are bound by HIPAA, the American federal privacy law for patients. Learn more about how we help you comply by watching this 3 minute refresher on HIPAA basics and Elescan.</p>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/e6AxmI_ekls" 
+                    title="HIPAA Basics and Elescan" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Mental Health Professionals -->
+        <div class="user-category">
+            <h2>Mental health professionals and others who prefer paper charting</h2>
+            <p>For healthcare providers who still prefer the traditional paper-based workflow, Elescan seamlessly bridges the gap between paper and digital. Keep your familiar charting process while gaining the benefits of secure digital storage and sharing.</p>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/8x0JkqZfXwc" 
+                    title="Elescan for Mental Health Professionals" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Medical Billers and Coders -->
+        <div class="user-category">
+            <h2>Medical billers and coders</h2>
+            <p>Have providers scan and send insurance cards, demographics, and records in a HIPAA-compliant manner at affordable prices. Streamline your billing workflow with secure document sharing that eliminates the need for fax machines and email attachments.</p>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/c8gdhl8ImK8" 
+                    title="Elescan for Medical Billers and Coders" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Residents and Hospital-based Physicians -->
+        <div class="user-category">
+            <h2>Residents and hospital-based physicians</h2>
+            <p>You should always follow your hospital policy. Now, keeping case logs and preparing presentations on your patients is easy and affordable. Document cases securely while maintaining compliance with institutional requirements.</p>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/tNIU7spj0IM" 
+                    title="Elescan for Residents and Hospital-based Physicians" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="background: #1e293b; color: white; padding: 3rem 0; margin-top: 3rem;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div class="footer-section">
+                <h3 style="color: #06b6d4; margin-bottom: 1rem;">Elescan</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">HIPAA-compliant scanner and cloud storage for healthcare professionals.</p>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: white; margin-bottom: 1rem;">Product</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="/#features" style="color: #94a3b8; text-decoration: none;">Features</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="/#pricing" style="color: #94a3b8; text-decoration: none;">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: white; margin-bottom: 1rem;">Company</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="/privacy-policy" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #94a3b8; text-decoration: none;">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: white; margin-bottom: 1rem;">Contact</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="/support" style="color: #94a3b8; text-decoration: none;">Support</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="/documentation" style="color: #94a3b8; text-decoration: none;">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid #374151; margin-top: 2rem; padding-top: 2rem; text-align: center;">
+            <p style="color: #94a3b8; margin-bottom: 0.5rem;">&copy; 2024 Anescribe, LLC. All rights reserved.</p>
+            <p class="developer-credit" style="color: #6b7280; font-size: 0.9rem;">Elescan was developed for Anescribe, LLC by Denys Kolosovskyy.</p>
+        </div>
+    </div>
+</footer>
