@@ -13,11 +13,6 @@
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/ElescanMain.MvcApplicationPartsAssemblyInfo.cache
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets.build.json
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets.development.json
-/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets/msbuild.ElescanMain.Microsoft.AspNetCore.StaticWebAssets.props
-/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets/msbuild.build.ElescanMain.props
-/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets/msbuild.buildMultiTargeting.ElescanMain.props
-/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets/msbuild.buildTransitive.ElescanMain.props
-/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets.pack.json
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/scopedcss/bundle/ElescanMain.styles.css
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/scopedcss/projectbundle/ElescanMain.bundle.scp.css
@@ -49,3 +44,11 @@
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/bin/Release/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/ElescanMain.csproj.AssemblyReference.cache
 /Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/ElescanM.5DF2196D.Up2Date
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/bin/Release/net8.0/ElescanMain.staticwebassets.endpoints.json
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/rpswa.dswa.cache.json
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/ElescanMain.sourcelink.json
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/rjimswa.dswa.cache.json
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/rjsmrazor.dswa.cache.json
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/rjsmcshtml.dswa.cache.json
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets.build.json.cache
+/Volumes/T9/Code/web/ElescanMain/ElescanMain/obj/Release/net8.0/staticwebassets.build.endpoints.json

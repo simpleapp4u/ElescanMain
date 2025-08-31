@@ -2,11 +2,71 @@
 
 <PageTitle>Elescan - HIPAA-Compliant Scanner & Cloud Storage for Healthcare</PageTitle>
 
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- Application Insights JavaScript SDK -->
+<script type="text/javascript">
+!function(T,l,y){var S=T.location,u="script",k="instrumentationKey",D="ingestionendpoint",C="disableExceptionTracking",E="ai.device.",I="toLowerCase",b="crossOrigin",w="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[I](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+t.replace(/-/g,"")+"."+n,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,p,l,u;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][I]()]=i[1])}if(!e[D]){var r=e.endpointsuffix,o=r?e.location:null;e[D]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[k]||d[k]||"",p=s[D],l=p?p+"/v2/track":d.endpointUrl,(u=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=l,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),u.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script").replace(/"/g,'\\"')+'"\nSnippet failed to load ['+t+'] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: '+(S&&S.pathname||"_unknown_")+'\nEndpoint: '+n,o.properties={endpoint:n},i}(0,t,l)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:w,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(w,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(u,l))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(u);n.src=h;var e=y[b];return!e&&""!==e||"undefined"==n[b]||(n[b]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(u)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[C]&&!0!==s[C]){var c="onerror";t(["_"+c]);var p=T[c];T[c]=function(e,t,n,a,i){var r=p&&p(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js",
+cfg: {
+    instrumentationKey: "1409897b-40d8-43bd-b266-ac86d69ce1b1"
+}
+});
+</script>
+
+<!-- Custom Analytics Tracking Functions -->
+<script type="text/javascript">
+    // Track download button clicks
+    function trackDownloadClick(buttonLocation) {
+        if (typeof appInsights !== 'undefined') {
+            appInsights.trackEvent({
+                name: 'DownloadButtonClick',
+                properties: {
+                    buttonLocation: buttonLocation,
+                    timestamp: new Date().toISOString(),
+                    page: window.location.pathname
+                }
+            });
+        }
+        console.log('Download click tracked:', buttonLocation);
+    }
+
+    // Track Experience Elescan Now button clicks
+    function trackDemoClick() {
+        if (typeof appInsights !== 'undefined') {
+            appInsights.trackEvent({
+                name: 'ExperienceElescanClick',
+                properties: {
+                    timestamp: new Date().toISOString(),
+                    page: window.location.pathname,
+                    buttonText: 'Experience Elescan Now'
+                }
+            });
+        }
+        console.log('Experience Elescan Now click tracked');
+    }
+
+    // Track custom metrics
+    function trackCustomMetric(metricName, value, properties = {}) {
+        if (typeof appInsights !== 'undefined') {
+            appInsights.trackMetric({
+                name: metricName,
+                average: value,
+                properties: properties
+            });
+        }
+    }
+</script>
+
 <!-- Navigation -->
-<nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.3rem 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border: none; box-shadow: none; outline: none;">
+<nav class="top-nav" style="background: linear-gradient(135deg, #131B3F 0%, #06b6d4 100%); padding: 0.25rem 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border: none; box-shadow: none; outline: none;">
     <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; border: none; box-shadow: none; outline: none;">
         <a href="/" class="nav-logo" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="/images/logo.png" alt="Elescan Logo" style="height: 100px; width: auto; min-height: 100px; max-height: none;">
+            <img src="/images/logo.png" alt="Elescan Logo" style="height: 35px; width: auto;">
         </a>
         
         <div class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
@@ -22,7 +82,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero" style="margin-top: 110px;">
+<section class="hero" style="margin-top: 55px;">
     <div class="hero-content">
         <!-- Login Button - With small spacing from navigation -->
         <div class="hero-login" style="margin-top: 2rem; margin-bottom: 2rem; text-align: center;">
@@ -35,7 +95,7 @@
                 <img src="/images/logo.png" alt="Elescan Logo" class="logo">
             </div>
             <div class="hero-download">
-                <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-xl" target="_blank">
+                <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-xl" target="_blank" onclick="trackDownloadClick('hero-section')">
                     <img src="/images/download.svg" alt="Download on App Store" class="download-image-xl">
                 </a>
             </div>
@@ -66,8 +126,8 @@
                 <h2>Try the Elescan demo right in your browser – no download needed!</h2>
                 <p>Experience the mobile interface and intuitive design while exploring the most secure, HIPAA-compliant platform to store and share your documents with confidence.</p>
                 <div class="demo-buttons">
-                    <a href="https://app.elescan.com/demo" class="btn btn-primary btn-large" target="_blank">Experience Elescan Now</a>
-                    <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+                    <a href="https://app.elescan.com/demo" class="btn btn-primary btn-large" target="_blank" onclick="trackDemoClick()">Experience Elescan Now</a>
+                    <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank" onclick="trackDownloadClick('demo-section')">
                         <img src="/images/download.svg" alt="Download on App Store" class="download-image">
                     </a>
                 </div>
@@ -80,50 +140,158 @@
     </div>
 </section>
 
-<!-- Features Section -->
-<section id="features" class="features">
-    <div class="container">
-        <h2>Everything You Need in One App</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <!-- AI Image Description: Clean, modern icon representing document scanning - a smartphone with scanning lines over a document, in medical blue color scheme -->
-                    <img src="/images/scan-icon.png" alt="Scan documents">
-                </div>
-                <h3>HIPAA-Compliant Scanning</h3>
-                <p>Turn any iPhone or iPad into a professional medical scanner with enterprise-grade security and HIPAA compliance built-in.</p>
+<!-- Value Proposition Section with Bootstrap -->
+<section id="features" class="value-propositions py-5 bg-light">
+    <div class="container-fluid px-4">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-4 fw-bold text-primary mb-4">Transform Your Practice Today</h2>
+                <div class="mx-auto" style="width: 60px; height: 4px; background: linear-gradient(90deg, #06b6d4, #131B3F); border-radius: 2px;"></div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <!-- AI Image Description: Cloud storage icon with medical cross symbol, representing secure cloud storage for healthcare documents -->
-                    <img src="/images/cloud-icon.png" alt="Cloud storage">
+        </div>
+        
+        <!-- Value Prop 1: Text Left, Image Right -->
+        <div class="row align-items-center mb-5 py-4">
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4">
+                    <h3 class="h2 fw-bold text-dark mb-4">Stop Wasting Hours on Paperwork</h3>
+                    <p class="lead text-muted mb-4">Tired of waiting in line for the office scanner? Fed up with paper jams and poor quality scans? Transform your iPhone into a professional medical scanner that captures perfect documents instantly. No more trips to the copy room, no more delays in patient care.</p>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-success rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Scan anywhere, anytime - even at patient bedside</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-success rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Crystal-clear quality every time</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-success rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">HIPAA-compliant from the moment you capture</span>
+                        </div>
+                    </div>
                 </div>
-                <h3>Secure Cloud Storage</h3>
-                <p>Store unlimited scans in our HIPAA-compliant cloud. Your documents are always accessible, always secure, always yours.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <!-- AI Image Description: Sharing icon showing multiple devices connected with security shield, representing secure document sharing -->
-                    <img src="/images/share-icon.png" alt="Secure sharing">
+            <div class="col-lg-6 col-md-12">
+                <div class="text-center">
+                    <img src="/images/scan-value.png" alt="Mobile scanning convenience" class="img-fluid rounded-4 shadow-lg" style="max-height: 400px; object-fit: cover;">
                 </div>
-                <h3>Secure Sharing</h3>
-                <p>Share documents with colleagues, patients, or billing teams without email attachments. Control access and maintain privacy.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <!-- AI Image Description: Desktop computer monitor showing a clean web interface for document management, professional medical UI design -->
-                    <img src="/images/desktop-icon.png" alt="Desktop access">
+        </div>
+
+        <!-- Value Prop 2: Image Left, Text Right -->
+        <div class="row align-items-center mb-5 py-4 bg-white rounded-4 shadow-sm mx-1">
+            <div class="col-lg-6 col-md-12 order-lg-1 order-2">
+                <div class="text-center">
+                    <img src="/images/cloud-value.png" alt="Never lose documents again" class="img-fluid rounded-4 shadow-lg" style="max-height: 400px; object-fit: cover;">
                 </div>
-                <h3>Web Console</h3>
-                <p>Access and manage all your documents from any desktop browser.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <!-- AI Image Description: Modern split-screen login interface showing traditional email/password form on the left and a prominent QR code scanner on the right, with a secure lock icon and flowing connection lines between mobile and desktop, all in medical blue color scheme -->
-                    <img src="/images/login-icon.png" alt="Flexible login options">
+            <div class="col-lg-6 col-md-12 order-lg-2 order-1 mb-4 mb-lg-0">
+                <div class="ps-lg-4">
+                    <h3 class="h2 fw-bold text-dark mb-4">Never Lose Critical Patient Information Again</h3>
+                    <p class="lead text-muted mb-4">What happens when your computer crashes? When files get corrupted? When you need patient records from home? Your documents are automatically secured in our HIPAA-compliant cloud the moment you scan them. Access everything from anywhere, even if your device breaks.</p>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-primary rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Automatic backup - never lose another document</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-primary rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Access from any device, anywhere</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-primary rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Military-grade encryption keeps data secure</span>
+                        </div>
+                    </div>
                 </div>
-                <h3>Flexible Login</h3>
-                <p>Choose your preferred way to access the web console: traditional email/password or simply scan a QR code with your phone for instant secure access.</p>
+            </div>
+        </div>
+
+        <!-- Value Prop 3: Image Left, Text Right -->
+        <div class="row align-items-center mb-5 py-4">
+            <div class="col-lg-6 col-md-12 order-lg-1 order-2">
+                <div class="text-center">
+                    <img src="/images/share-value.png" alt="Easy secure sharing" class="img-fluid rounded-4 shadow-lg" style="max-height: 400px; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 order-lg-2 order-1 mb-4 mb-lg-0">
+                <div class="ps-lg-4">
+                    <h3 class="h2 fw-bold text-dark mb-4">End Email Attachment Headaches Forever</h3>
+                    <p class="lead text-muted mb-4">Stop getting "file too large" errors. Stop worrying about HIPAA violations with email attachments. Share patient documents instantly with secure links that you control. Colleagues get what they need immediately, patients receive their records without delays.</p>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-warning rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">No more "file too large" frustrations</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-warning rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Share with anyone, control who sees what</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-warning rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Instant delivery, no waiting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Value Prop 4: Text Left, Image Right -->
+        <div class="row align-items-center mb-5 py-4 bg-white rounded-4 shadow-sm mx-1">
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4">
+                    <h3 class="h2 fw-bold text-dark mb-4">Work From Anywhere, Respond to Urgent Requests Instantly</h3>
+                    <p class="lead text-muted mb-4">Patient needs records for specialist appointment tomorrow? Insurance company requesting documentation after hours? Access all your documents from any computer or device. Handle urgent requests from home, review files during travel, never be tied to your office again.</p>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-info rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Handle urgent requests from anywhere</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-info rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Better work-life balance</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-info rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Faster patient care and referrals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="text-center">
+                    <img src="/images/access-value.png" alt="Work from anywhere" class="img-fluid rounded-4 shadow-lg" style="max-height: 400px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Value Prop 5: Image Left, Text Right -->
+        <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-md-12 order-lg-1 order-2">
+                <div class="text-center">
+                    <img src="/images/login-value.png" alt="Quick secure access" class="img-fluid rounded-4 shadow-lg" style="max-height: 400px; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 order-lg-2 order-1 mb-4 mb-lg-0">
+                <div class="ps-lg-4">
+                    <h3 class="h2 fw-bold text-dark mb-4">Get Instant Access with QR Code Login</h3>
+                    <p class="lead text-muted mb-4">Tired of typing complex passwords? Skip the hassle and get instant, secure access with a simple QR code scan. Perfect for busy clinical environments where speed matters, and you need quick access to patient information.</p>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-secondary rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Instant access without typing passwords</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-secondary rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Perfect for fast-paced healthcare environments</span>
+                        </div>
+                        <div class="list-group-item border-0 px-0 py-2 bg-transparent">
+                            <span class="badge bg-secondary rounded-pill me-3">✓</span>
+                            <span class="fw-semibold">Secure authentication every time</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -244,7 +412,7 @@
         <h2>Ready to Transform Your Practice?</h2>
         <p>Join thousands of healthcare professionals who trust Elescan for their document management needs.</p>
         <div class="cta-buttons">
-            <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank">
+            <a href="https://apps.apple.com/us/app/elescan/id6743489325" class="download-btn download-btn-large" target="_blank" onclick="trackDownloadClick('cta-section')">
                 <img src="/images/download.svg" alt="Download on App Store" class="download-image">
             </a>
         </div>

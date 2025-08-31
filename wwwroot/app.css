@@ -142,17 +142,27 @@ p {
     box-sizing: border-box;
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+/* Custom Button Styles - Override Bootstrap */
+.btn.btn-primary {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: var(--radius) !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+.btn.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md) !important;
+    text-decoration: none !important;
 }
 
 .btn-secondary {
@@ -180,10 +190,11 @@ p {
     color: var(--primary-color);
 }
 
-.btn-large {
-    padding: 1.25rem 2rem;
-    font-size: 1.125rem;
-    height: 66px;
+.btn.btn-large {
+    padding: 1.25rem 2rem !important;
+    font-size: 1.125rem !important;
+    height: 66px !important;
+    min-width: 200px !important;
 }
 
 .btn-small {
@@ -263,12 +274,12 @@ p {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     gap: 2rem;
 }
 
 .hero-logo .logo {
-    height: 440px;
+    height: 200px;
     width: auto;
     max-width: 100%;
 }
@@ -414,53 +425,94 @@ p {
     border: 1px solid var(--border-color);
 }
 
-/* Features Section */
-.features {
+/* Value Propositions Section */
+.value-propositions {
     padding: 6rem 1rem;
     background-color: var(--surface-color);
 }
 
-.features h2 {
+.value-propositions h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    color: var(--text-primary);
 }
 
-.features-grid {
+.value-prop {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+    padding: 0 2rem;
 }
 
-.feature-card {
-    background-color: white;
-    padding: 2.5rem;
+.value-prop:last-child {
+    margin-bottom: 0;
+}
+
+.value-prop.reverse {
+    direction: rtl;
+}
+
+.value-prop.reverse > * {
+    direction: ltr;
+}
+
+.value-content {
+    max-width: 500px;
+}
+
+.value-content h3 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.value-content p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.value-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.value-benefits li {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    padding-left: 0;
+    font-weight: 500;
+}
+
+.value-benefits li:last-child {
+    margin-bottom: 0;
+}
+
+.value-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     border-radius: var(--radius-lg);
-    text-align: center;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
+.value-image img:hover {
+    transform: translateY(-5px) scale(1.02);
     box-shadow: var(--shadow-xl);
-}
-
-.feature-icon {
-    margin-bottom: 1.5rem;
-}
-
-.feature-icon img {
-    width: 64px;
-    height: 64px;
-}
-
-.feature-card h3 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.feature-card p {
-    color: var(--text-secondary);
 }
 
 /* Benefits Section */
@@ -832,6 +884,34 @@ p {
         grid-template-columns: 1fr;
     }
     
+    .value-prop {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        padding: 0 1rem;
+    }
+    
+    .value-prop.reverse {
+        direction: ltr;
+    }
+    
+    .value-content {
+        max-width: none;
+        order: 1;
+    }
+    
+    .value-image {
+        order: 2;
+    }
+    
+    .value-prop.reverse .value-content {
+        order: 1;
+    }
+    
+    .value-prop.reverse .value-image {
+        order: 2;
+    }
+    
     .benefits-grid {
         grid-template-columns: 1fr;
     }
@@ -880,11 +960,25 @@ p {
     }
     
     .features,
+    .value-propositions,
     .benefits,
     .pricing,
     .trust,
     .cta {
         padding: 4rem 1rem;
+    }
+    
+    .value-propositions h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .value-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .value-content p {
+        font-size: 1rem;
     }
     
     h2 {
